@@ -140,6 +140,8 @@ async function init() {
     console.log(e);
     return;
   }
+
+  const { projectName, concern, framework, variant } = result; // destructure the choices - todo: destructure the id as well
 }
 
 init().catch((e) => {
