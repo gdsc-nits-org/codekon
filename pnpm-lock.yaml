@@ -1,39 +1,43 @@
-lockfileVersion: 5.4
-
-specifiers:
-  '@types/prompts': ^2.4.3
-  kolorist: ^1.7.0
-  prompts: ^2.4.2
+lockfileVersion: '6.0'
 
 dependencies:
-  prompts: 2.4.2
+  prompts:
+    specifier: ^2.4.2
+    version: 2.4.2
 
 devDependencies:
-  '@types/prompts': 2.4.3
-  kolorist: 1.7.0
+  '@types/node':
+    specifier: ^20.2.3
+    version: 20.2.3
+  '@types/prompts':
+    specifier: ^2.4.3
+    version: 2.4.3
+  kolorist:
+    specifier: ^1.7.0
+    version: 1.7.0
 
 packages:
 
-  /@types/node/18.15.5:
-    resolution: {integrity: sha512-Ark2WDjjZO7GmvsyFFf81MXuGTA/d6oP38anyxWOL6EREyBKAxKoFHwBhaZxCfLRLpO8JgVXwqOwSwa7jRcjew==}
+  /@types/node@20.2.3:
+    resolution: {integrity: sha512-pg9d0yC4rVNWQzX8U7xb4olIOFuuVL9za3bzMT2pu2SU0SNEi66i2qrvhE2qt0HvkhuCaWJu7pLNOt/Pj8BIrw==}
     dev: true
 
-  /@types/prompts/2.4.3:
+  /@types/prompts@2.4.3:
     resolution: {integrity: sha512-qpzXlxoPv67TCtTCS+SwYmz1M+G5ARTrE5YVlrZPy/xBD36dzLqiJLDzOzsMXkcJYq6+6UkWqFwtLAOjsfec5Q==}
     dependencies:
-      '@types/node': 18.15.5
+      '@types/node': 20.2.3
       kleur: 3.0.3
     dev: true
 
-  /kleur/3.0.3:
+  /kleur@3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
     engines: {node: '>=6'}
 
-  /kolorist/1.7.0:
+  /kolorist@1.7.0:
     resolution: {integrity: sha512-ymToLHqL02udwVdbkowNpzjFd6UzozMtshPQKVi5k1EjKRqKqBrOnE9QbLEb0/pV76SAiIT13hdL8R6suc+f3g==}
     dev: true
 
-  /prompts/2.4.2:
+  /prompts@2.4.2:
     resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
     engines: {node: '>= 6'}
     dependencies:
@@ -41,6 +45,6 @@ packages:
       sisteransi: 1.0.5
     dev: false
 
-  /sisteransi/1.0.5:
+  /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: false

@@ -127,21 +127,16 @@ async function init() {
         type: "select",
         name: "variant",
         message: "select a variant: ",
-        choices: (variant: Framework) =>
-          variant.variants?.map((v) => {
-            return {
-              title: v.display || v.name,
-              value: v.name,
-            };
-          }),
+        choices: (variant: FrameworkVariant) =>
+          variant.display
       },
     ]);
   } catch (e: any) {
     console.log(e);
     return;
   }
-
-  const { projectName, concern, framework, variant } = result; // destructure the choices - todo: destructure the id as well
+  // console.log(result)
+  // const { projectName, concern, framework, variant } = result; // destructure the choices - todo: destructure the id as well
 }
 
 init().catch((e) => {
