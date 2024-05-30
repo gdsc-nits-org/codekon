@@ -2,18 +2,29 @@
   "name": "codekon",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev:node": "node --enable-source-maps dist/index.js",
+    "dev": "pnpm run \"/dev:/\""
   },
   "keywords": [],
-  "author": "",
+  "author": "GDSC NITS <gdsc@nits.ac.in>",
+  "contributors": [
+    "Adhiraj Dutta <bytehead.dev@gmail.com>"
+  ],
   "license": "GPL-3.0",
   "dependencies": {
+    "execa": "^9.1.0",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@types/prompts": "^2.4.3",
-    "kolorist": "^1.7.0"
+    "@types/node": "^20.12.13",
+    "@types/prompts": "^2.4.9",
+    "kolorist": "^1.8.0",
+    "typescript": "^5.4.5"
   }
 }

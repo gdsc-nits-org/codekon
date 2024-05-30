@@ -1,147 +1,84 @@
 import prompts from "prompts";
-// import { blue, red} from 'kolorist'
+import { blue, yellow, cyan, magenta, green, red, lightBlue } from "kolorist";
 
-// type ColorFunc = (str: string | number) => string
+type ColorFunc = (str: string | number) => string;
 
-type Concern = {
+type template = {
   name: string;
   display: string;
-  // color: ColorFunc;
-  // id: number;
-  variants: Framework[];
+  color: ColorFunc;
 };
 
-type Framework = {
-  name: string;
-  display: string;
-  // color: ColorFunc;
-  // id: number;
-  variants?: FrameworkVariant[];
-};
-
-type FrameworkVariant = {
-  name: string;
-  display: string;
-  // color: ColorFunc;
-  //   id: number;
-};
-
-const FRAMEWORKS: Concern[] = [
+const TEMPLATES: template[] = [
   {
-    name: "front",
-    display: "Frontend",
-    variants: [
-      {
-        name: "react",
-        display: "React",
-        variants: [
-          {
-            name: "react",
-            display: "JavaScript",
-          },
-          {
-            name: "react-ts",
-            display: "TypeScript",
-          },
-        ],
-      },
-      {
-        name: "svelte",
-        display: "Svelte",
-        variants: [
-          {
-            name: "svelte",
-            display: "JavaScript",
-          },
-          {
-            name: "svelte-ts",
-            display: "TypeScript",
-          },
-        ],
-      },
-    ],
+    name: "react-js-app",
+    display: "React + SASS + JavaScript Template",
+    color: yellow,
   },
   {
-    name: "back",
-    display: "Backend",
-    variants: [
-      {
-        name: "python",
-        display: "Python",
-      },
-      {
-        name: "vanilla",
-        display: "JavaScipt",
-      },
-      {
-        name: "vanilla-ts",
-        display: "TypeScript",
-      },
-    ],
+    name: "next-js-app",
+    display: "NextJS Pages router + SASS + JavaScript Template",
+    color: cyan,
+  },
+  {
+    name: "penp-t",
+    display: "PostgreSQL + Express + Node + Prisma + TypeScript API Template",
+    color: magenta,
+  },
+  {
+    name: "menp-t",
+    display: "MongoDB + Express + Node + Prisma + TypeScript API Template",
+    color: green,
+  },
+  {
+    name: "penpal-t",
+    display:
+      "PostgreSQL + Express + Node + Prisma + AWS Lambda + TypeScript API Template",
+    color: red,
+  },
+  {
+    name: "menpal-t",
+    display:
+      "MongoDB + Express + Node + Prisma + AWS Lambda + TypeScript API Template",
+    color: blue,
   },
 ];
 
-// const TEMPLATES = FRAMEWORKS;
-
-// console.log(TEMPLATES[0].variants[0].variants);
-
-let result: prompts.Answers<
-  "projectName" | "concern" | "framework" | "variant"
->;
+const DEFAULT_NAME: string = "gdsc-project";
 
 async function init() {
+  let result: prompts.Answers<"projectName" | "template">;
   try {
     result = await prompts([
       {
         type: "text",
         name: "projectName",
-        message: "Project name: ",
-        initial: "Project name",
+        message: lightBlue("Project name: "),
+        initial: DEFAULT_NAME,
       },
       {
         type: "select",
-        name: "concern",
-        message: "Select the concern: ",
-        initial: 0,
-        choices: FRAMEWORKS.map((f) => {
+        name: "template",
+        message: "Select the template: ",
+        choices: TEMPLATES.map((f) => {
+          const color = f.color;
           return {
-            title: f.display || f.name,
-            value: f,
+            title: color(f.display || f.name),
+            value: f.name,
           };
         }),
       },
-      {
-        type: "select",
-        name: "framework",
-        message: "Select a framework: ",
-        initial: 0,
-        choices: (framework: Concern) =>
-          framework.variants?.map((f) => {
-            return {
-              title: f.display || f.name,
-              value: f.name,
-            };
-          }),
-      },
-      {
-        type: "select",
-        name: "variant",
-        message: "select a variant: ",
-        choices: (variant: Framework) =>
-          variant.variants?.map((v) => {
-            return {
-              title: v.display || v.name,
-              value: v.name,
-            };
-          }),
-      },
-    ]);
+    ],
+  {
+    onCancel: () => {
+      throw new Error(red('✖') + ' Operation cancelled');
+    }
+  });
   } catch (e: any) {
-    console.log(e);
+    console.log(e.message);
     return;
   }
-
-  const { projectName, concern, framework, variant } = result; // destructure the choices - todo: destructure the id as well
+  const { projectName, template } = result;
 }
 
 init().catch((e) => {
