@@ -60,11 +60,11 @@ async function init() {
         type: "select",
         name: "template",
         message: "Select the template: ",
-        choices: TEMPLATES.map((f) => {
-          const color = f.color;
+        choices: TEMPLATES.map((t) => {
+          const color = t.color;
           return {
-            title: color(f.display || f.name),
-            value: f.name,
+            title: color(t.display || t.name),
+            value: t.name,
           };
         }),
       },
