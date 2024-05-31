@@ -1,8 +1,8 @@
 import prompts from "prompts";
-import { execa } from "execa";
 import { red, lightBlue } from "kolorist";
 import { TEMPLATES, DEFAULT_NAME, ORG_NAME } from "./constants/index.js";
 import {
+  installCommand,
   isGitInstalled,
   isPnpmInstalled,
   isValidProjectName,
@@ -29,6 +29,7 @@ async function init() {
             return {
               title: color(t.display || t.name),
               value: t.name,
+              description: color(`https://github.com/${ORG_NAME}/${t.name}`),
             };
           }),
         },
@@ -54,10 +55,12 @@ async function init() {
     if (isGitInstalled()) {
       try {
         if (isPnpmInstalled()) {
-          await execa`pnpm dlx degit ${template} ${projectName}`;
+          installCommand(template, projectName);
+        } else {
+          throw new Error(red("✖") + " pnpm is required for operation.");
         }
       } catch (e) {
-        throw new Error(red("✖") + " pnpm is required for operation.");
+        console.error(e);
       }
     } else {
       throw new Error(red("✖") + " git is required for operation.");
