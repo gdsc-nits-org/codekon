@@ -3,17 +3,6 @@ import { execa } from "execa";
 export const isGitInstalled = (): boolean => {
   try {
     execa("git --version", { stdio: "ignore" });
-    console.log("git is installed");
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
-
-export const isGitHubCLIInstalled = (): boolean => {
-  try {
-    execa("gh --version", { stdio: "ignore" });
-    console.log("gh is installed");
     return true;
   } catch (error) {
     return false;
@@ -23,9 +12,23 @@ export const isGitHubCLIInstalled = (): boolean => {
 export const isPnpmInstalled = (): boolean => {
   try {
     execa("pnpm --version", { stdio: "ignore" });
-    console.log("pnpm is installed");
     return true;
   } catch (error) {
     return false;
   }
+};
+
+export const isValidProjectName = (projectName: string) => {
+  return /^(?:@[a-z\d\-*~][a-z\d\-*._~]*\/)?[a-z\d\-~][a-z\d\-._~]*$/.test(
+    projectName,
+  );
+};
+
+export const toValidProjectName = (projectName: string) => {
+  return projectName
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/^[._]/, "")
+    .replace(/[^a-z\d\-~]+/g, "-");
 };

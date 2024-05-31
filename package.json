@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev:node": "node --enable-source-maps dist/index.js",
+    "start": "node dist/src/index.js",
+    "dev:node": "tsc --noEmit && node --enable-source-maps dist/src/index.js",
     "dev": "pnpm run \"/dev:/\"",
     "lint": "tsc --noEmit && eslint --cache src --fix",
     "format": "prettier --write --cache src"
