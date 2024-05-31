@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist/src/index.js",
-    "dev:node": "tsc --noEmit && node --enable-source-maps dist/src/index.js",
+    "dev:node": "tsc && node --enable-source-maps dist/src/index.js",
     "dev": "pnpm run \"/dev:/\"",
     "lint": "tsc --noEmit && eslint --cache src --fix",
     "format": "prettier --write --cache src"
