@@ -20,6 +20,7 @@
   ],
   "license": "GPL-3.0",
   "dependencies": {
+    "commander": "^12.1.0",
     "execa": "^9.1.0",
     "ora": "^8.0.1",
     "prompts": "^2.4.2"
