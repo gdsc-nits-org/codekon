@@ -1,7 +1,7 @@
 {
   "name": "codekon",
   "version": "0.0.1",
-  "description": "",
+  "description": "Entirety of GDSC NITS project templates at your fingertips",
   "type": "module",
   "main": "dist/src/index.js",
   "scripts": {
@@ -14,6 +14,8 @@
     "format": "prettier --write --cache src"
   },
   "keywords": [],
+  "repository": "https://github.com/gdsc-nits-org/codekon",
+  "homepage": "https://github.com/gdsc-nits-org/codekon#readme",
   "author": "GDSC NITS <gdsc@nits.ac.in>",
   "contributors": [
     "Adhiraj Dutta <bytehead.dev@gmail.com>"
