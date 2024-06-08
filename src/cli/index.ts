@@ -25,17 +25,27 @@ export const cli = async (): Promise<CliResults> => {
       "name of your project",
       defaultOptions.projectName,
     )
-    .option("-t, --template <value>", "the template to use", cliResults.template)
-    .addHelpText("afterAll", `\nExample call: codekon my-app react-js-app\nTemplates available: ${TEMPLATES.map((t) => t.name).join(", ")}`);
+    .option(
+      "-t, --template <value>",
+      "the template to use",
+      cliResults.template,
+    )
+    .addHelpText(
+      "afterAll",
+      `\nExample call: codekon my-app react-js-app\nTemplates available: ${TEMPLATES.map((t) => t.name).join(", ")}`,
+    );
   program.parse(process.argv);
 
   const cliProvidedName: string = program.args[0] || "";
   const cliProvidedTemplate: string = program.opts().template;
-  if (cliProvidedTemplate && !TEMPLATES.map((t) => t.name).includes(cliProvidedTemplate)) {
+  if (
+    cliProvidedTemplate &&
+    !TEMPLATES.map((t) => t.name).includes(cliProvidedTemplate)
+  ) {
     console.log(red("✖") + " Invalid template name");
     process.exit(1);
   }
-  
+
   if (cliProvidedName) {
     cliResults.projectName = cliProvidedName;
     cliResults.template = cliProvidedTemplate;
