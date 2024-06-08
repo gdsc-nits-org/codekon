@@ -3,8 +3,17 @@ import { Command } from "commander";
 import { red, lightBlue } from "kolorist";
 import { TEMPLATES, DEFAULT_NAME, ORG_NAME } from "../constants/index.js";
 
+/**
+ * Interface for storing the project name and template name.
+ */
 interface CliResults {
+  /**
+   * The name of the project. Defaults to "gdsc-project" as specified in the `DEFAULT_NAME` constant.
+   */
   projectName: typeof DEFAULT_NAME;
+  /**
+   * The name of the template to use. Defaults to the first template in the `TEMPLATES` array. Currently set to `react-js-app`.
+   */
   template: (typeof TEMPLATES)[number]["name"];
 }
 
@@ -13,6 +22,16 @@ const defaultOptions: CliResults = {
   template: TEMPLATES[0]?.name ?? "",
 };
 
+/**
+ * Contains core concept of the working of the CLI. First checks for arguments and options passed in the CLI. If not found, prompts the user for the project name and template to use.
+ *
+ * @example Using the CLI
+ * ```bash
+ * codekon gdsc-project react-js-app
+ * ```
+ *
+ * @returns {Promise<CliResults>} - The project name and template name
+ */
 export const cli = async (): Promise<CliResults> => {
   const cliResults = defaultOptions;
 
