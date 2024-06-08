@@ -9,6 +9,9 @@ import {
   toValidProjectName,
 } from "./utils/index.js";
 
+/**
+ * Main program entry point. Sanitises the project name, checks if git and pnpm are installed, and installs the template.
+ */
 const main = async () => {
   let { projectName, template } = await cli();
   template = ORG_NAME + "/" + template;
