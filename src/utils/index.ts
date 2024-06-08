@@ -3,7 +3,7 @@ import ora from "ora";
 
 export const isGitInstalled = (): boolean => {
   try {
-    execa("git --version", { stdio: "ignore" });
+    execa("git", ["--version"], { stdio: "ignore" });
     return true;
   } catch (error) {
     return false;
@@ -12,7 +12,7 @@ export const isGitInstalled = (): boolean => {
 
 export const isPnpmInstalled = (): boolean => {
   try {
-    execa("pnpm --version", { stdio: "ignore" });
+    execa("pnpm", ["--version"], { stdio: "ignore" });
     return true;
   } catch (error) {
     return false;
