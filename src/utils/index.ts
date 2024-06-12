@@ -1,4 +1,6 @@
-import { execa } from "execa";
+import { exec, execSync } from "node:child_process";
+import util from "node:util";
+// import { execa } from "execa";
 import ora from "ora";
 
 /**
@@ -8,7 +10,8 @@ import ora from "ora";
  */
 export const isGitInstalled = (): boolean => {
   try {
-    execa("git", ["--version"], { stdio: "ignore" });
+    // execa("git", ["--version"], { stdio: "ignore" });
+    execSync("git --version");
     return true;
   } catch (error) {
     return false;
@@ -22,7 +25,8 @@ export const isGitInstalled = (): boolean => {
  */
 export const isPnpmInstalled = (): boolean => {
   try {
-    execa("pnpm", ["--version"], { stdio: "ignore" });
+    // execa("pnpm", ["--version"], { stdio: "ignore" });
+    execSync("pnpm --version");
     return true;
   } catch (error) {
     return false;
@@ -68,7 +72,9 @@ export const installCommand = async (
 ): Promise<void> => {
   const spinner = ora("Downloading template").start();
   try {
-    await execa`pnpm dlx degit ${template} ${projectName}`;
+    const execa = util.promisify(exec);
+    // await execa`pnpm dlx degit ${template} ${projectName}`;
+    await execa(`pnpm dlx degit ${template} ${projectName}`);
     spinner.succeed("Template downloaded successfully");
   } catch (error) {
     spinner.fail("Failed to download template");

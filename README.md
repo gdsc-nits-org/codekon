@@ -25,6 +25,10 @@
   by running <code>npx codekon</code>
 </p>
 
+<div align="center">
+  [![install size][packagephobia-image]][packagephobia-link][![NPM version][npm-image]][npm-url]
+</div>
+
 ## About
 
 [GDSC NITS](https://gdscnits.in) has a set of templates to streamline the development of web based projects by having **opiniated** configs and settings. The various templates available are -
@@ -88,3 +92,8 @@ pnpx codekon my-app react-js-app
 - [x] ~~Test `pnpm create codekon`.~~ My bad. For this to work, the package name should have been `create-codekon`.
 - [ ] Add screenshots and video.
 - [x] Fix `pnpm dlx codekon`.
+
+[packagephobia-image]: https://packagephobia.com/badge?p=codekon
+[packagephobia-url]: https://packagephobia.com/result?p=codekon
+[npm-url]: https://www.npmjs.com/package/codekon
+[npm-image]: https://img.shields.io/npm/v/codekon?color=0b7285&logoColor=0b7285

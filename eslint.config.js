@@ -9,13 +9,16 @@ export default [
   ...tseslint.configs.recommended,
   {
     plugins: {
-      "import": pluginImport,
+      import: pluginImport,
     },
   },
   {
     rules: {
-      "import/order": ["error", {"alphabetize": {"order": "asc", "caseInsensitive": true}}],
+      "import/order": [
+        "error",
+        { alphabetize: { order: "asc", caseInsensitive: true } },
+      ],
       // "import/no-unused-modules": ["error", {"unusedExports": true}]
-    }
-  }
+    },
+  },
 ];
