@@ -12,7 +12,7 @@
     "dev:node": "tsc && node --enable-source-maps dist/src/index.js",
     "dev": "pnpm run \"/dev:/\"",
     "lint": "tsc --noEmit && eslint --cache src tests --fix",
-    "format": "prettier --write --cache src tests docs",
+    "format": "prettier --write --cache src tests",
     "pretty": "prettier './*.{js,mjs,json,md,html}' --write --cache",
     "prepare": "husky",
     "pub:beta": "pnpm build && npm publish --tag beta",
