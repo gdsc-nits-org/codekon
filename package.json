@@ -12,7 +12,8 @@
     "dev:node": "tsc && node --enable-source-maps dist/src/index.js",
     "dev": "pnpm run \"/dev:/\"",
     "lint": "tsc --noEmit && eslint --cache src tests --fix",
-    "format": "prettier --write --cache src tests"
+    "format": "prettier --write --cache src tests",
+    "prepare": "husky"
   },
   "keywords": [],
   "repository": "https://github.com/gdsc-nits-org/codekon",
@@ -35,6 +36,7 @@
     "eslint": "~9.4.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.4.0",
+    "husky": "^9.0.11",
     "jest": "^29.7.0",
     "jsdoc": "^4.0.3",
     "kolorist": "^1.8.0",
