@@ -26,7 +26,9 @@
 </p>
 
 <div align="center">
-  [![install size][packagephobia-image]][packagephobia-link][![NPM version][npm-image]][npm-url]
+
+  [![install size][packagephobia-image]][packagephobia-url] [![NPM version][npm-image]][npm-url]
+
 </div>
 
 ## About
@@ -92,6 +94,7 @@ pnpx codekon my-app react-js-app
 - [x] ~~Test `pnpm create codekon`.~~ My bad. For this to work, the package name should have been `create-codekon`.
 - [ ] Add screenshots and video.
 - [x] Fix `pnpm dlx codekon`.
+- [ ] Remove `execa` and test with `child-process`.
 
 [packagephobia-image]: https://packagephobia.com/badge?p=codekon
 [packagephobia-url]: https://packagephobia.com/result?p=codekon
