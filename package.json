@@ -32,6 +32,7 @@
   "dependencies": {
     "commander": "^12.1.0",
     "execa": "^9.2.0",
+    "kolorist": "^1.8.0",
     "ora": "^8.0.1",
     "prompts": "^2.4.2"
   },
@@ -41,14 +42,14 @@
     "@types/prompts": "^2.4.9",
     "eslint": "~9.4.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
     "globals": "^15.4.0",
     "husky": "^9.0.11",
     "jest": "^29.7.0",
     "jsdoc": "^4.0.3",
-    "kolorist": "^1.8.0",
-    "prettier": "3.3.1",
+    "prettier": "3.3.2",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^7.12.0"
+    "typescript-eslint": "^7.13.0"
   },
   "files": [
     "dist/src"

@@ -1,6 +1,7 @@
-import prompts from "prompts";
 import { Command } from "commander";
 import { red, lightBlue } from "kolorist";
+import prompts from "prompts";
+
 import { TEMPLATES, DEFAULT_NAME, ORG_NAME } from "../constants/index.js";
 
 /**
