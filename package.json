@@ -1,6 +1,6 @@
 {
   "name": "codekon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Entirety of GDSC NITS project templates at your fingertips",
   "type": "module",
   "main": "dist/src/index.js",
@@ -19,7 +19,10 @@
     "pub": "pnpm build && npm publish"
   },
   "keywords": [],
-  "repository": "https://github.com/gdsc-nits-org/codekon",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gdsc-nits-org/codekon.git"
+  },
   "homepage": "https://github.com/gdsc-nits-org/codekon#readme",
   "author": "GDSC NITS <gdsc@nits.ac.in> (https://gdscnits.in)",
   "contributors": [
@@ -50,5 +53,7 @@
   "files": [
     "dist/src"
   ],
-  "bin": "./dist/src/index.js"
+  "bin": {
+    "codekon": "dist/src/index.js"
+  }
 }

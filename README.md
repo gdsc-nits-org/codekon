@@ -22,7 +22,7 @@
     href="https://github.com/orgs/gdsc-nits-org/repositories?q=template%3Atrue+archived%3Afalse"
     >GDSC NITS project templates</a
   >
-  by running <code>pnpm create codekon</code>
+  by running <code>npx codekon</code>
 </p>
 
 ## About
@@ -40,16 +40,10 @@
 
 > To scaffold a template using `codekon`, make sure you have `git` and `pnpm` installed. We use `pnpm` in our projects and strongly recommend you to do so too. For now, `codekon` only supports `pnpm`.
 
-- First install the tool globally
-
-```bash
-pnpm i -g codekon
-```
-
 - To use `codekon` interactively:
 
 ```bash
-codekon
+npx codekon
 ```
 
 - Follow the prompts. The project will be created in the directory.
@@ -57,13 +51,13 @@ codekon
 - You can also directly create projects by passing the arguments:
 
 ```bash
-codekon [projectName] [templateName]
+npx codekon [projectName] [templateName]
 ```
 
 For example:
 
 ```bash
-codekon my-app react-js-app
+npx codekon my-app react-js-app
 ```
 
 ## Credits -
@@ -73,7 +67,8 @@ codekon my-app react-js-app
 
 ### TODO
 
-- [ ] Publish to NPM.
+- [x] Publish to NPM.
 - [ ] Test in Linux.
-- [ ] Test `pnpm create codekon`.
+- [x] ~~Test `pnpm create codekon`.~~ My bad. For this to work, the package name should have been `create-codekon`.
 - [ ] Add screenshots and video.
+- [ ] Fix `pnpm dlx codekon`.
