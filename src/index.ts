@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { red } from "kolorist";
 import { cli } from "./cli/index.js";
 import { ORG_NAME } from "./constants/index.js";

@@ -12,15 +12,18 @@
     "dev:node": "tsc && node --enable-source-maps dist/src/index.js",
     "dev": "pnpm run \"/dev:/\"",
     "lint": "tsc --noEmit && eslint --cache src tests --fix",
-    "format": "prettier --write --cache src tests",
-    "prepare": "husky"
+    "format": "prettier --write --cache src tests docs",
+    "pretty": "prettier './*.{js,mjs,json,md,html}' --write --cache",
+    "prepare": "husky",
+    "pub:beta": "pnpm build && npm publish --tag beta",
+    "pub": "pnpm build && npm publish"
   },
   "keywords": [],
   "repository": "https://github.com/gdsc-nits-org/codekon",
   "homepage": "https://github.com/gdsc-nits-org/codekon#readme",
-  "author": "GDSC NITS <gdsc@nits.ac.in>",
+  "author": "GDSC NITS <gdsc@nits.ac.in> (https://gdscnits.in)",
   "contributors": [
-    "Adhiraj Dutta <bytehead.dev@gmail.com>"
+    "Adhiraj Dutta <bytehead.dev@gmail.com> (https://adhiraj.me)"
   ],
   "license": "GPL-3.0",
   "dependencies": {
@@ -46,5 +49,6 @@
   },
   "files": [
     "dist/src"
-  ]
+  ],
+  "bin": "./dist/src/index.js"
 }
