@@ -18,7 +18,7 @@
     "pub:beta": "pnpm build && npm publish --tag beta",
     "pub": "pnpm build && npm publish"
   },
-  "keywords": [],
+  "keywords": ["gdsc", "reactjs", "nodejs", "typescript", "template", "cli", "codekon", "express", "mongodb", "postgresql"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gdsc-nits-org/codekon.git"
