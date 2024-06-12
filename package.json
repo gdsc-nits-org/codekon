@@ -1,6 +1,6 @@
 {
   "name": "codekon",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Entirety of GDSC NITS project templates at your fingertips",
   "type": "module",
   "main": "dist/src/index.js",

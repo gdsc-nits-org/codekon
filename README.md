@@ -46,6 +46,10 @@
 npx codekon
 ```
 
+```bash
+pnpx codekon
+```
+
 - Follow the prompts. The project will be created in the directory.
 
 - You can also directly create projects by passing the arguments:
@@ -54,11 +58,23 @@ npx codekon
 npx codekon [projectName] [templateName]
 ```
 
+```bash
+pnpx codekon [projectName] [templateName]
+```
+
 For example:
 
 ```bash
 npx codekon my-app react-js-app
 ```
+
+```bash
+pnpx codekon my-app react-js-app
+```
+
+- To get the help message run `codekon --help`
+
+<img src="./.github/screenshots/help.png" alt="help picture" align="center">
 
 ## Credits -
 
@@ -68,7 +84,7 @@ npx codekon my-app react-js-app
 ### TODO
 
 - [x] Publish to NPM.
-- [ ] Test in Linux.
+- [x] Test in Linux.
 - [x] ~~Test `pnpm create codekon`.~~ My bad. For this to work, the package name should have been `create-codekon`.
 - [ ] Add screenshots and video.
-- [ ] Fix `pnpm dlx codekon`.
+- [x] Fix `pnpm dlx codekon`.
