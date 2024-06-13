@@ -1,0 +1,24 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+      - name: use node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+      - name: install dependencies
+        run: pnpm install
+      - name: build and publish
+        run: pnpm pub:beta
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
