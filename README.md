@@ -22,7 +22,7 @@
     href="https://github.com/orgs/gdsc-nits-org/repositories?q=template%3Atrue+archived%3Afalse"
     >GDSC NITS project templates</a
   >
-  by running <code>npx codekon</code>
+  by running <code>pnpx codekon</code>
 </p>
 
 <div align="center">
@@ -48,9 +48,13 @@
 
 - To use `codekon` interactively:
 
+Using npm:
+
 ```bash
 npx codekon
 ```
+
+Using pnpm:
 
 ```bash
 pnpx codekon
@@ -69,10 +73,6 @@ pnpx codekon [projectName] [templateName]
 ```
 
 For example:
-
-```bash
-npx codekon my-app react-js-app
-```
 
 ```bash
 pnpx codekon my-app react-js-app
@@ -94,7 +94,7 @@ pnpx codekon my-app react-js-app
 - [x] ~~Test `pnpm create codekon`.~~ My bad. For this to work, the package name should have been `create-codekon`.
 - [ ] Add screenshots and video.
 - [x] Fix `pnpm dlx codekon`.
-- [ ] Remove `execa` and test with `child-process`.
+- [x] Remove `execa` and test with `child-process`. Reduced install size by 55%. Brought node support to `>=18` from `>= 20.5.0`.
 
 [packagephobia-image]: https://packagephobia.com/badge?p=codekon
 [packagephobia-url]: https://packagephobia.com/result?p=codekon
