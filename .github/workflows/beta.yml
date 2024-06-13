@@ -1,9 +1,9 @@
-name: Publish to npm
+name: Publish to npm beta
 
 on:
   push:
     branches:
-      - 'dev'
+      - 'beta'
 jobs:
   build:
     runs-on: ubuntu-22.04
