@@ -18,7 +18,6 @@ export default [
         "error",
         { alphabetize: { order: "asc", caseInsensitive: true } },
       ],
-      // "import/no-unused-modules": ["error", {"unusedExports": true}]
     },
   },
 ];

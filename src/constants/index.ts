@@ -43,6 +43,6 @@ export const TEMPLATES: template[] = [
   },
 ];
 
-export const DEFAULT_NAME: string = "gdsc-project";
+export const DEFAULT_NAME: string = "new-project";
 
 export const ORG_NAME: string = "gdsc-nits-org";

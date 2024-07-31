@@ -27,7 +27,7 @@
 
 <div align="center">
 
-  [![install size][packagephobia-image]][packagephobia-url] [![NPM version][npm-image]][npm-url]
+[![install size][packagephobia-image]][packagephobia-url] [![NPM version][npm-image]][npm-url]
 
 </div>
 
@@ -95,6 +95,7 @@ pnpx codekon my-app react-js-app
 - [ ] Add screenshots and video.
 - [x] Fix `pnpm dlx codekon`.
 - [x] Remove `execa` and test with `child-process`. Reduced install size by 55%. Brought node support to `>=18` from `>= 20.5.0`.
+- [x] Setup [changesets](https://github.com/changesets/changesets).
 
 [packagephobia-image]: https://packagephobia.com/badge?p=codekon
 [packagephobia-url]: https://packagephobia.com/result?p=codekon

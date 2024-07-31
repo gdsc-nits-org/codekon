@@ -3,7 +3,7 @@ name: Publish to npm beta
 on:
   push:
     branches:
-      - 'beta'
+      - "beta"
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -22,6 +22,8 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: build and publish
-        run: pnpm pub:beta
+        uses: changesets/action@v1
+        with:
+          publish: pnpm pub:beta
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
