@@ -78,7 +78,7 @@ For example:
 pnpx codekon my-app react-js-app
 ```
 
-- To get the help message run `codekon --help`
+- To get the help message run `codekon --help`. [Watch video tutorial](https://youtu.be/z4awl5lQgik).
 
 <img src="./.github/screenshots/help.png" alt="help picture" align="center">
 
@@ -92,7 +92,7 @@ pnpx codekon my-app react-js-app
 - [x] Publish to NPM.
 - [x] Test in Linux.
 - [x] ~~Test `pnpm create codekon`.~~ My bad. For this to work, the package name should have been `create-codekon`.
-- [ ] Add screenshots and video.
+- [x] Add screenshots and video.
 - [x] Fix `pnpm dlx codekon`.
 - [x] Remove `execa` and test with `child-process`. Reduced install size by 55%. Brought node support to `>=18` from `>= 20.5.0`.
 - [x] Setup [changesets](https://github.com/changesets/changesets).

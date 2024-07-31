@@ -22,6 +22,9 @@ jobs:
       - name: install dependencies
         run: pnpm install
       - name: build and publish
-        run: pnpm pub
+        uses: changesets/action@v1
+        with:
+          publish: pnpm pub
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
